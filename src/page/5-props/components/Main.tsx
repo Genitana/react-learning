@@ -4,8 +4,8 @@ import styles from './main.module.scss';
 
 export default function Main() {
   return (
-    <div>
-      
+    <div className={styles.page}>
+      hello world
     </div>
   )
 }
