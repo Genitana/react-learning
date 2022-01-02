@@ -5,7 +5,7 @@ import styles from './main.module.scss';
 export default function Main() {
   return (
     <div className={styles.page}>
-      hello world
+      5 props
     </div>
   )
 }

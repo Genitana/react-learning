@@ -12,3 +12,12 @@ yarn add typescript @types/node @types/react @types/react-dom @types/jest
 把package.json里的react-scripts版本改为"4.0.3"，然后再`yarn`
 - "react-scripts": "5.0.0" 安装的是 webpack5
 - "react-scripts": "4.0.3" 安装的是 webpack4 （这里还是先用4吧）
+
+## 安装 react-router-dom
+```
+yarn add react-router-dom 
+yarn add @types/react-router-dom  --dev
+```
+
+
+## 安装格式化
