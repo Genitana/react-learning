@@ -1,4 +1,5 @@
+import Main from './components/Main'
 
-export function Page () {
-    return <div></div>
+export default function Page () {
+    return <Main></Main>
 }
