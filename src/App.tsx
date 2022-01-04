@@ -10,8 +10,7 @@ import Main from './page/5-props/index'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div >
     <Router>
       <div>
         <ul>
@@ -55,7 +54,6 @@ function App() {
       </div>
     </Router>
         
-      </header>
     </div>
   );
 }
