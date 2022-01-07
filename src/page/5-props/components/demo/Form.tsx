@@ -14,8 +14,17 @@ export  default class Form extends React.Component<any, IState> {
 
   childrens:any[] = [];
 
-  submit = (handleSubmit: any) => {
+  submitForm = (handleSubmit: any) => {
     handleSubmit(this.state.formData);
+  }
+
+  resetForm =() => {
+    //TODO:
+  }
+
+  componentDidUpdate(){
+    console.log('componentDidUpdate');
+    
   }
 
   render () {
@@ -25,6 +34,8 @@ export  default class Form extends React.Component<any, IState> {
         this.childrens.push(child);
       }
     });
+    console.log('this.childrens', this.childrens);
+    
     return this.childrens;
   }
 }
