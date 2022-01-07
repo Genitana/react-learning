@@ -7,6 +7,8 @@ interface IProps {
 }
 
 export default function Formitem(props: IProps) {
+  console.log('Formitem');
+  
   const {name, label, children} = props;
   
   return (

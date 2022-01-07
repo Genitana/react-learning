@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Form from './Form'
 import FormItem, { Input } from './FormItem'
 
@@ -7,7 +7,7 @@ export default function Demo() {
 
   const submit =()=>{
       /* 表单提交 */
-      form.current?.submitForm((formValue:any)=>{
+      form.current?.submitForm((formValue: any)=>{
           console.log(formValue)
       })
   }
@@ -15,6 +15,12 @@ export default function Demo() {
       /* 表单重置 */
       form.current?.resetForm()
   }
+
+  useEffect(() => {
+    console.log('Demo effect length:', form.current?.childrens.length);
+  
+},[]);
+
   return <div className='box' >
       <Form ref={ form } >
           <FormItem name="name" label="我是"  >

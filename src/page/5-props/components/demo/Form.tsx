@@ -32,9 +32,15 @@ export  default class Form extends React.Component<any, IState> {
       if (React.isValidElement(item) && (item.type as any).displayName === 'formItem') {
         const child = React.cloneElement(item);
         this.childrens.push(child);
+        console.log('qqqq');
+        console.log('this.childrens.length', this.childrens.length);
+        
       }
     });
+    console.log(1111);
+    
     console.log('this.childrens', this.childrens);
+    console.log('this.childrens length', this.childrens.length);
     
     return this.childrens;
   }
