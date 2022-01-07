@@ -12,7 +12,7 @@ export  default class Form extends React.Component<any, IState> {
     };
   }
 
-  childrens = [];
+  childrens:any[] = [];
 
   submit = (handleSubmit: any) => {
     handleSubmit(this.state.formData);
@@ -20,7 +20,7 @@ export  default class Form extends React.Component<any, IState> {
 
   render () {
     React.Children.forEach(this.props.children, (item) => {
-      if (React.isValidElement(item) && item.type.displayName === 'formItem') {
+      if (React.isValidElement(item) && (item.type as any).displayName === 'formItem') {
         const child = React.cloneElement(item);
         this.childrens.push(child);
       }
