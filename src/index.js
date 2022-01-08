@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode> // 在DEv环境，这个模式可能 会造成多次render()调用，从源码来看 function finishClassComponent
+    <App />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

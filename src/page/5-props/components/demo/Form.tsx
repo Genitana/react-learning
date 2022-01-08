@@ -12,7 +12,9 @@ export  default class Form extends React.Component<any, IState> {
     };
   }
 
-  childrens:any[] = [];
+  //  很奇怪，这里如果childrens放在class里，会导致重复，有机会研究一下，react:17.0.2
+  // <React.StrictMode> 模式， 在DEv环境 可能会调用多次render() ,所以导致了这个问题
+  // childrens:any[] = [];
 
   submitForm = (handleSubmit: any) => {
     handleSubmit(this.state.formData);
@@ -28,20 +30,17 @@ export  default class Form extends React.Component<any, IState> {
   }
 
   render () {
+    const childrens = [] as React.ReactNode[];
     React.Children.forEach(this.props.children, (item) => {
       if (React.isValidElement(item) && (item.type as any).displayName === 'formItem') {
         const child = React.cloneElement(item);
-        this.childrens.push(child);
+        childrens.push(child);
         console.log('qqqq');
-        console.log('this.childrens.length', this.childrens.length);
+        console.log('this.childrens.length', childrens.length);
         
       }
     });
-    console.log(1111);
     
-    console.log('this.childrens', this.childrens);
-    console.log('this.childrens length', this.childrens.length);
-    
-    return this.childrens;
+    return childrens;
   }
 }

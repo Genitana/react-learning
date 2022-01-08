@@ -4,7 +4,7 @@ import Main from './components/Main'
 export default function Page () {
     return (
         <div>
-            <Main></Main>
+            {/* <Main></Main> */}
             <hr></hr>
             <Demo></Demo>
         </div>

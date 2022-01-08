@@ -17,7 +17,7 @@ export default function Demo() {
   }
 
   useEffect(() => {
-    console.log('Demo effect length:', form.current?.childrens.length);
+    console.log('Demo effect length:', form.current);
   
 },[]);
 

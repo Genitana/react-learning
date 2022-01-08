@@ -6,7 +6,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-export default function Formitem(props: IProps) {
+export default function FormItem(props: IProps) {
   console.log('Formitem');
   
   const {name, label, children} = props;
@@ -26,4 +26,4 @@ export function Input() {
   )
 }
 
-Formitem.displayName ='formItem';
+FormItem.displayName ='formItem';
