@@ -21,7 +21,7 @@ export  default class Form extends React.Component<any, IState> {
   }
 
   resetForm =() => {
-    //TODO:
+    this.setState({formData: {}})
   }
 
   handleInput = (value: Object) => {
@@ -30,7 +30,7 @@ export  default class Form extends React.Component<any, IState> {
   }
 
   componentDidUpdate(){
-    console.log('componentDidUpdate');
+    console.log('Form componentDidUpdate');
     
   }
 
@@ -38,11 +38,10 @@ export  default class Form extends React.Component<any, IState> {
     const childrens = [] as React.ReactNode[];
     React.Children.forEach(this.props.children, (item) => {
       if (React.isValidElement(item) && (item.type as any).displayName === 'formItem') {
-        const child = React.cloneElement(item,{handleInput: this.handleInput});
+        const child = React.cloneElement(item,{handleInput: this.handleInput, formData: this.state.formData});
         childrens.push(child);
-        console.log('qqqq');
-        console.log('this.childrens.length', childrens.length);
         
+        console.log('this.childrens.length', childrens.length);
       }
     });
     
