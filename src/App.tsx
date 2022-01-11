@@ -6,7 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
-import Main from './page/5-props/index'
+import Main from './page/5-props/index';
+import MyRefs from './page/7-ref/index';
 import MyTestRender from './page/my-test-render';
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </li>
           <li>
             <Link to="/5-props">5-props</Link>
+          </li>
+          <li>
+            <Link to="/7-refs">7-refs</Link>
           </li>
           <li>
             <Link to="/my-test-render">测试各种父子组件更新的情况</Link>
@@ -53,6 +57,9 @@ function App() {
           </Route>
           <Route path="/5-props">
             <Main></Main>
+          </Route>
+          <Route path="/7-refs">
+            <MyRefs></MyRefs>
           </Route>
           <Route path="/my-test-render">
             <MyTestRender></MyTestRender>
