@@ -1,8 +1,8 @@
 import React from "react"
-
+import { IObject } from "../../inteface";
 
 interface IState {
-  formData: Object;
+  formData: IObject;
 }
 export  default class Form extends React.Component<any, IState> {
   constructor(props:any) {
@@ -38,7 +38,10 @@ export  default class Form extends React.Component<any, IState> {
     const childrens = [] as React.ReactNode[];
     React.Children.forEach(this.props.children, (item) => {
       if (React.isValidElement(item) && (item.type as any).displayName === 'formItem') {
-        const child = React.cloneElement(item,{handleInput: this.handleInput, formData: this.state.formData});
+        const {name} = item.props;
+        const value = this.state.formData[name];
+
+        const child = React.cloneElement(item, {handleInput: this.handleInput, value});
         childrens.push(child);
         
         console.log('this.childrens.length', childrens.length);

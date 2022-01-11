@@ -1,13 +1,9 @@
 import React, { ChangeEvent, useEffect } from 'react'
 
-interface IObject {
-  [key: string]: any;
-}
-
 interface IProps {
   name:string;
   label: string;
-  formData?: IObject;
+  value?: string;
   handleInput?: (value:Object) => void;
   children: React.ReactElement;
 }
@@ -15,13 +11,12 @@ interface IProps {
 export default function FormItem(props: IProps) {
   console.log('Formitem');
   
-  const {name, label, handleInput, children} = props;
-  const  formData = props.formData || {};
+  const {name, label, value, handleInput, children} = props;
   
   return (
     <div>
       <span>{label}:</span>
-      {React.cloneElement(children, {name, handleInput, value: formData[name]}) }
+      {React.cloneElement(children, {name, handleInput, value}) }
     </div>
   );
 }
@@ -53,3 +48,4 @@ export function Input(props:any) {
 }
 
 FormItem.displayName ='formItem';
+Input.displayName = 'input';
