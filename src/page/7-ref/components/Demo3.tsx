@@ -3,6 +3,8 @@ import React from "react"
 class Children extends React.Component{  
     render=()=><div>hello,world</div>
 }
+
+/** Ref属性是一个ref对象 */
 export default class Demo3 extends React.Component{
     currentDom:any = React.createRef()
     currentComponentInstance:any = React.createRef()
