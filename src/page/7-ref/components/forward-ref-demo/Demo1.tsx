@@ -1,13 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useRef,Component } from 'react'
 
 
 export default class RefDemo1 extends Component {
-   ref = React.createRef();
+   
+  ref = React.createRef();
 
+   handleClick = () => {
+     console.log('RefDemo1 ref', this.ref);
+     
+   }
   render(){
     return (
       <div>
-        <Son ref={'qqq'} ></Son>
+        <Son ref={'qqq'} test={this.ref} ></Son>
+        <button onClick={this.handleClick}>ttrrr</button>
       </div>
     )
   } 
@@ -16,8 +23,9 @@ export default class RefDemo1 extends Component {
 class Son extends Component<any> {
 
   componentDidMount(){
-    const { ref } = this.props;
+    const { ref,test } = this.props;
     console.log("son  received ref", ref);
+    console.log("son  received test", test);
   }
 
   render() {
@@ -28,4 +36,11 @@ class Son extends Component<any> {
       </div>
     )
   }
+}
+
+function GrandSon(props: any) {
+  
+    return (
+      <span ref={props.test}>grand son!</span>
+    )
 }
